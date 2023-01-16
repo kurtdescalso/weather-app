@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router'
 
-import {Auth0Service, ILoginResponse} from '../../../services/auth/auth0.service';
+import {AuthService} from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-login',
@@ -9,24 +9,12 @@ import {Auth0Service, ILoginResponse} from '../../../services/auth/auth0.service
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  isLoading = false;
-
   constructor(
     private router: Router,
-    private auth0: Auth0Service,
+    public auth: AuthService,
   ) {}
 
   login() {
-    this.isLoading = true;
-    this.auth0.login()
-      .then((data: ILoginResponse) => {
-        localStorage.setItem("auth0_token", data.token);
-        this.isLoading = false;
-        this.router.navigate(["home"]);
-      })
-      .catch((error) => {
-        this.isLoading = false;
-        alert(error);
-      })
+    this.router.navigate(["home"])
   }
 }

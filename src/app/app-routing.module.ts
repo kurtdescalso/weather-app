@@ -5,9 +5,12 @@ import {LoginComponent} from "./components/public/login/login.component";
 import {LandingComponent} from "./components/weather/landing/landing.component";
 import {PageNotFoundComponent} from './components/public/page-not-found/page-not-found.component';
 
+import {AuthGuard} from '@auth0/auth0-angular';
+
 const routes: Routes = [
-  {path: "", component: LoginComponent},
-  {path: "home", component: LandingComponent},
+  {path: "", redirectTo: "login", pathMatch: "full"},
+  {path: "login", component: LoginComponent},
+  {path: "home", component: LandingComponent, canActivate: [AuthGuard]},
   {path: "**", component: PageNotFoundComponent},
 ];
 

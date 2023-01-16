@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+	<mat-icon aria-hidden="false" aria-label="Example cloud icon" fontIcon="cloud" class="nav-icon"></mat-icon>
+	<span>Weather Forecast</span>
+	<div class="spacer"></div>
+	<button mat-flat-button *ngIf="(auth.isAuthenticated$ | async)" (click)="logout()">Log Out</button>
+</mat-toolbar>

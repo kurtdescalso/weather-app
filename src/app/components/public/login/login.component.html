@@ -1,7 +1,7 @@
 <div class="main-container">
 	<p class="welcome-message">Welcome to the weather forecast web application. Please login with your Github user to use the application and view the weather in your city.</p>
 	<div class="controls-container">
-		<button class="login-button" mat-stroked-button color="primary" (click)="login()" [disabled]="isLoading">Login</button>
-		<mat-spinner *ngIf="isLoading" class="loading-spinner" diameter="25"></mat-spinner>
+		<button type="button" class="login-button" mat-stroked-button color="primary" (click)="login()" [disabled]="auth.isLoading$ | async">Login</button>
+		<mat-spinner *ngIf="auth.isLoading$ | async" class="loading-spinner" diameter="25"></mat-spinner>
 	</div>
 </div>

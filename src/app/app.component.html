@@ -8,14 +8,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .nav-icon {
-	padding: 0 0.5em 0 0;
-  }
-
-  .spacer {
-    flex: 1;
-  }
-
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
     .card-container > *:not(.circle-link) ,
@@ -47,10 +39,12 @@
 </style>
 
 <!-- Toolbar -->
-<mat-toolbar color="primary">
-  <mat-icon aria-hidden="false" aria-label="Example cloud icon" fontIcon="cloud" class="nav-icon"></mat-icon>
-  <span>Weather App</span>
-    <div class="spacer"></div>
-</mat-toolbar>
+<!--mat-toolbar color="primary">
+	<mat-icon aria-hidden="false" aria-label="Example cloud icon" fontIcon="cloud" class="nav-icon"></mat-icon>
+	<span>Weather App</span>
+	<div class="spacer"></div>
+	<button mat-flat-button>Log Out</button>
+</mat-toolbar-->
+<app-navigation-bar></app-navigation-bar>
 
 <router-outlet></router-outlet>

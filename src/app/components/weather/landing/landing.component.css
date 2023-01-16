@@ -4,6 +4,20 @@
 	height: 70vh;
 }
 
+.profile-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	row-gap: 1em;
+	padding: 1em;
+	width: 100vw;
+}
+
+.profile-text-data {
+	margin: 0;
+}
+
 .controls-container {
 	display: flex;
 	flex-direction: column;
@@ -22,4 +36,10 @@
 	min-width: max-content;
 	width: max-content;
 	max-width: max-content;
+}
+
+@media screen and (max-width: 575px) {
+	.profile-container {
+		display: none;
+	}
 }
