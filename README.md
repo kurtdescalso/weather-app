@@ -33,7 +33,7 @@ npm install
     | Authorization callback URL | https://<YOUR DOMAIN>/login/callback |
     
  - Provide your GitHub app **Client ID** and **Secret** to Auth0 GitHub integration page and Save
- - Set the Application URIs to the following
+ - Set the Application URIs to the following:
 
     | Field | Value |
     | ----- | ----- |
@@ -44,7 +44,7 @@ npm install
 
 
 ## Setup WeatherAPI
- - Create an account with (WeatherAPI)[https://www.weatherapi.com/]
+ - Create an account with [WeatherAPI](https://www.weatherapi.com/)
  - Paste your **API key** into the 'src/environments/environment.ts' file's **weatherApiKey** field
 
 ### Run the application
