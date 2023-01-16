@@ -14,6 +14,8 @@ td {
 
 .data-container {
 	padding-bottom: 4em;
+	width: 80vw;
+	overflow: auto;
 }
 
 .controls-container {
