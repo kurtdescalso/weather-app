@@ -1,0 +1,22 @@
+table,
+th,
+tr,
+td {
+	border: 1px solid gray;
+}
+
+.main-container {
+	display: grid;
+	place-content: center;
+	padding-top: 2em;
+	width: 100vw;
+}
+
+.data-container {
+	padding-bottom: 4em;
+}
+
+.controls-container {
+	display: flex;
+	justify-content: end;
+}

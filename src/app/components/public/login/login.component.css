@@ -1,0 +1,38 @@
+.main-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 20vh;
+	padding-top: 4em;
+	width: 100vw;
+	height: 60vh;
+}
+
+.inner-container {
+	width: 60vw;
+}
+
+.welcome-message {
+	line-height: 1.75em;
+	margin-bottom: 2em;
+}
+
+.controls-container {
+	display: flex;
+	align-items: center;
+}
+
+.login-button {
+	margin-right: 1em;
+	width: max-content;
+}
+
+.loading-spinner {
+	width: 1em;
+	height: 1em;
+}
+
+@media screen and (min-width: 768px) {
+	.main-container {
+		width: 100vw;
+	}
+}
