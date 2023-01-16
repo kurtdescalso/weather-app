@@ -3,12 +3,14 @@
 		<p class="profile-text-data">{{ githubUserData.name }}</p>
 		<p class="profile-text-data"><a href="{{ githubUserData.githubLink }}">{{ githubUserData.githubLink }}</a></p>
 	</div>
-	<div class="controls-container">
-		<mat-form-field class="search-input-container">
-			<mat-label>City</mat-label>
-			<mat-icon matPrefix>search</mat-icon>
-			<input matInput type="text" />
-		</mat-form-field>
-		<button mat-stroked-button color="primary" class="search-button">Display Weather</button>
-	</div>
+	<form [formGroup]="weatherForm" (ngSubmit)="onSubmit()">
+		<div class="controls-container">
+			<mat-form-field class="search-input-container">
+				<mat-label>City</mat-label>
+				<mat-icon matPrefix>search</mat-icon>
+				<input matInput type="text" formControlName="city" />
+			</mat-form-field>
+			<button mat-stroked-button color="primary" class="search-button" type="submit" [disabled]="!weatherForm.valid">Display Weather</button>
+		</div>
+	</form>
 </div>

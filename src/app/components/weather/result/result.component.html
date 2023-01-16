@@ -1,0 +1,41 @@
+<div class="main-container">
+	<div class="data-container">
+		<table mat-table [dataSource]="weather.weatherData">
+			<ng-container matColumnDef="date">
+				<th mat-header-cell *matHeaderCellDef>Date (mm/dd/YYYY)</th>
+				<td mat-cell *matCellDef="let element">{{ element.date }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="temp">
+				<th mat-header-cell *matHeaderCellDef>Temp(F)</th>
+				<td mat-cell *matCellDef="let element">{{ element.temp }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="description">
+				<th mat-header-cell *matHeaderCellDef>Description</th>
+				<td mat-cell *matCellDef="let element">{{ element.description }}</td>
+			</ng-container>
+
+			<!--ng-container matColumnDef="main">
+				<th mat-header-cell *matHeaderCellDef>Main</th>
+				<td mat-cell *matCellDef="let element">{{ element.main }}</td>
+			</ng-container-->
+
+			<ng-container matColumnDef="pressure">
+				<th mat-header-cell *matHeaderCellDef>Pressure</th>
+				<td mat-cell *matCellDef="let element">{{ element.pressure }}</td>
+			</ng-container>
+
+			<ng-container matColumnDef="humidity">
+				<th mat-header-cell *matHeaderCellDef>Humidity</th>
+				<td mat-cell *matCellDef="let element">{{ element.humidity }}</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+		</table>
+	</div>
+	<div class="controls-container">
+		<button mat-stroked-button color="primary" (click)="goBack()">Back</button>
+	</div>
+</div>

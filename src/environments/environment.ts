@@ -5,5 +5,5 @@ export const environment = {
     clientId: "",
     redirectUri: "http://localhost:4200/home",
   },
-  openWeatherApiKey: "",
+  weatherApiKey: "",
 };
