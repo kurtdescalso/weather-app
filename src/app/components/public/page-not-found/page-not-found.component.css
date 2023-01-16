@@ -1,0 +1,15 @@
+.main-container {
+	display: grid;
+	place-content: center;
+	justify-content: center;
+	height: 70vh;
+}
+
+.page-not-found-header {
+	text-align: center;
+}
+
+.controls-container {
+	display: flex;
+	justify-content: center;
+}

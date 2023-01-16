@@ -1,0 +1,25 @@
+.main-container {
+	display: grid;
+	place-content: center;
+	height: 70vh;
+}
+
+.controls-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 1em;
+	padding: 4em;
+	width: 80vw;
+}
+
+.search-input-container {
+	display: inline-block;
+	width: 80%;
+}
+
+.search-button {
+	min-width: max-content;
+	width: max-content;
+	max-width: max-content;
+}
