@@ -1,27 +1,55 @@
-# WeatherApp
+# Sample Weather App Installation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.1.
+## Prerequisites
+ - [Setup Angular](https://angular.io/guide/setup-local) development environment
+ - An [Auth0](https://auth0.com/) account
 
-## Development server
+## Setup Angular Project
+Paste the following commands in your terminal:
+```sh
+git clone https://github.com/kurtdescalso/weather-app
+cd weather-app
+npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Setup Auth0
+ - Sign in to [Auth0](https://auth0.com/)
+ - Create an **SPA Application** (Angular) in the  Auth0 dashboard
+ - **Keep a copy** of your newly created app's **Domain** key, **Client ID**, and **Client Secret**
+ - Paste the **Domain** and **Client ID** into their respective fields in _src/environments/environment.ts_
 
-## Code scaffolding
+ - Add GitHub Integration:
+     - Go to: https://marketplace.auth0.com/integrations/github-social-connection
+     - Under Permissions, check ___read:user___
+     - Select your Angular App that will use the GitHub integration
+     - In the bottom-left corner popup, click the forward button until you find a link to sign up for a GitHub developer account and open the link
+     - Sign in to GitHub
+     - Click the _"Register a new application"_ button
+     - Fill out the necessary information:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    | Field | Value |
+    | ----- | ----- |
+    | Homepage URL | https://<YOUR DOMAIN> |
+    | Authorization callback URL | https://<YOUR DOMAIN>/login/callback |
+    
+ - Provide your GitHub app **Client ID** and **Secret** to Auth0 GitHub integration page and Save
+ - Set the Application URIs to the following
 
-## Build
+    | Field | Value |
+    | ----- | ----- |
+    | Application Login URI | http://<YOUR DOMAIN>/login |
+    | Allowed Callback URLs | https://<YOUR DOMAIN>, https://<YOUR DOMAIN>/home, http://localhost:4200, http://localhost:4200/home, http://localhost:4200/home/ |
+    | Allowed Logout URLs | https://<YOUR DOMAIN>/logout |
+    | Allowed Web Origins | https://<YOUR DOMAIN>, http://localhost:4200 |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Setup WeatherAPI
+ - Create an account with (WeatherAPI)[https://www.weatherapi.com/]
+ - Paste your **API key** into the 'src/environments/environment.ts' file's **weatherApiKey** field
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Run the application
+Test the app by running the following in the project directory:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```sh
+ng serve
+```
